@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="viewModel"
+                type="com.mvvm.ui.landing.LandingViewModel" />
+    </data>
+    <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <TextView
+                android:text="@{viewModel.titleMenu}"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:id="@+id/textView"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:background="@color/colorAccent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp"
+                android:layout_marginEnd="0dp"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars"
+                android:id="@+id/imageView"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/standingsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textView"
+                app:adapter="@{viewModel.standingsArrayList}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+    </RelativeLayout>
+
+</layout>

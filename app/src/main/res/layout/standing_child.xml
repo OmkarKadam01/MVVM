@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="viewModel"
+                type="com.mvvm.ui.landing.pojo.Standings" />
+    </data>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="60dp">
+
+    <TextView
+            android:id="@+id/points_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="@{viewModel.clubName + '('+viewModel.clubShortName+')'}"
+     />
+
+</RelativeLayout>
+</layout>
